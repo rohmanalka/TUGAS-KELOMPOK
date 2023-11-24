@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class PeminjamanPengembalian5 {
+public class PeminjamanPengembalian {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
@@ -46,6 +46,15 @@ public class PeminjamanPengembalian5 {
             System.out.println("\n=======INFORMASI LENGKAP=======");
             System.out.println("Nama Peminjam: " + nama + "\nNIM Peminjam: " + NIM + "\nBuku Yang Dipinjam: " + namaBuku + 
                                 "\nJumlah Buku Yang Dipinjam: " + jumlahBuku + "\nTotal Denda: " + denda);
+            System.out.print("Masukkan nominal pembayaran: ");
+            int bayar = input.nextInt();
+            if (bayar > denda) {
+                double kembalian = bayar - denda;
+                System.out.println("Kembalian anda adalah: " + kembalian);
+                System.out.println("Buku berhasil dikembalikan");
+            } else {
+                System.out.print("Uang anda pas, ");
+                System.out.print("Buku berhasil dikembalikan");                }
         } else {
             System.out.println("Buku berhasil dikembalikan");
         }
