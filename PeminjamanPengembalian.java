@@ -46,6 +46,7 @@ public class PeminjamanPengembalian {
             System.out.println("\n=======INFORMASI LENGKAP=======");
             System.out.println("Nama Peminjam: " + nama + "\nNIM Peminjam: " + NIM + "\nBuku Yang Dipinjam: " + namaBuku + 
                                 "\nJumlah Buku Yang Dipinjam: " + jumlahBuku + "\nTotal Denda: " + denda);
+<<<<<<< HEAD
             System.out.print("Masukkan nominal pembayaran: ");
             int bayar = input.nextInt();
             if (bayar > denda) {
@@ -55,6 +56,8 @@ public class PeminjamanPengembalian {
             } else {
                 System.out.print("Uang anda pas, ");
                 System.out.print("Buku berhasil dikembalikan");                }
+=======
+>>>>>>> 0b8dd4aab95e3f209152d232410f060120a4d0ca
         } else {
             System.out.println("Buku berhasil dikembalikan");
         }
