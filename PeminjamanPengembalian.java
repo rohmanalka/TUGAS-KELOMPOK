@@ -18,27 +18,21 @@ public class PeminjamanPengembalian {
         int totalDenda = 0; // Variabel untuk menyimpan total denda keseluruhan
 
         for (int i = 0; i < jumlahBuku; i++) {
-            System.out.print("\nMasukkan nama buku ke-" + (i + 1) + ": ");
+            System.out.println("\nMasukkan informasi buku ke-" + (i + 1));
+            System.out.print("Masukkan nama buku: ");
             bukuPeminjaman[i][0] = input.nextLine();
-            System.out.print("Lama meminjam (DD): ");
-            bukuPeminjaman[i][1] = input.nextLine();
-            System.out.print("Lama meminjam (MM): "); 
-            bukuPeminjaman[i][2] = input.nextLine();
-            System.out.print("Lama meminjam (YYYY): ");
-            bukuPeminjaman[i][3] = input.nextLine();
-            System.out.print("Tanggal peminjaman (DD): ");
-            bukuPeminjaman[i][4] = input.nextLine();
-            System.out.print("Tanggal pengembalian (MM): ");
-            bukuPeminjaman[i][5] = input.nextLine();
-            System.out.print("Tanggal pengembalian (YYYY): ");
-            bukuPeminjaman[i][6] = input.nextLine();
-            System.out.print("Tanggal pengembalian (DD): ");
-            bukuPeminjaman[i][7] = input.nextLine();
-            System.out.print("Tanggal pengembalian (MM): ");
-            bukuPeminjaman[i][8] = input.nextLine();
-            System.out.print("Tanggal pengembalian (YYYY): ");
-            bukuPeminjaman[i][9] = input.nextLine();
 
+            for (int j = 1; j <= 3; j++) {
+                System.out.print("Lama meminjam (" + (j == 1 ? "DD" : (j == 2 ? "MM" : "YYYY")) + "): ");
+                bukuPeminjaman[i][j] = input.nextLine();
+            }
+
+            for (int j = 4; j <= 9; j++) {
+                System.out.print("Tanggal " + (j <= 6 ? "peminjaman" : "pengembalian") + " (" +
+                        ((j - 4) % 3 == 0 ? "DD" : ((j - 4) % 3 == 1 ? "MM" : "YYYY")) + "): ");
+                bukuPeminjaman[i][j] = input.nextLine();
+            }
+            
             int hariTerlambat = Integer.parseInt(bukuPeminjaman[i][7]) - (Integer.parseInt(bukuPeminjaman[i][4]) + Integer.parseInt(bukuPeminjaman[i][1]));
             int bulanTerlambat = Integer.parseInt(bukuPeminjaman[i][8]) - (Integer.parseInt(bukuPeminjaman[i][5]) + Integer.parseInt(bukuPeminjaman[i][2]));
             int tahunTerlambat = Integer.parseInt(bukuPeminjaman[i][9]) - (Integer.parseInt(bukuPeminjaman[i][6]) + Integer.parseInt(bukuPeminjaman[i][3]));
